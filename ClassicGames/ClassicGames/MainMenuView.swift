@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MainMenuView: View {
     var body: some View {
-        NavigationView {
-            VStack {
+        NavigationStack {
+            VStack(spacing: 20) {
                 Text("Classic Games")
                     .font(.largeTitle)
                     .padding()
@@ -24,6 +24,7 @@ struct MainMenuView: View {
                         .cornerRadius(10)
                 }
             }
+            .navigationTitle("Main Menu")
         }
     }
 }
