@@ -13,6 +13,8 @@
 		48B6720D2C6FACD5003A7980 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B6720C2C6FACD5003A7980 /* Preview Assets.xcassets */; };
 		48B672152C6FAFDD003A7980 /* SnakeGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B672142C6FAFDD003A7980 /* SnakeGameView.swift */; };
 		48B672172C6FFA75003A7980 /* SnakeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B672162C6FFA75003A7980 /* SnakeStruct.swift */; };
+		48B672192C700798003A7980 /* SnakeGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B672182C700798003A7980 /* SnakeGameModel.swift */; };
+		48B6721D2C70B6DB003A7980 /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B6721C2C70B6DB003A7980 /* GameBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		48B6720E2C6FACD5003A7980 /* ClassicGames.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClassicGames.entitlements; sourceTree = "<group>"; };
 		48B672142C6FAFDD003A7980 /* SnakeGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeGameView.swift; sourceTree = "<group>"; };
 		48B672162C6FFA75003A7980 /* SnakeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeStruct.swift; sourceTree = "<group>"; };
+		48B672182C700798003A7980 /* SnakeGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeGameModel.swift; sourceTree = "<group>"; };
+		48B6721C2C70B6DB003A7980 /* GameBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				48B672092C6FACD5003A7980 /* Assets.xcassets */,
 				48B6720E2C6FACD5003A7980 /* ClassicGames.entitlements */,
 				48B6720B2C6FACD5003A7980 /* Preview Content */,
+				48B672182C700798003A7980 /* SnakeGameModel.swift */,
+				48B6721C2C70B6DB003A7980 /* GameBoardView.swift */,
 			);
 			path = ClassicGames;
 			sourceTree = "<group>";
@@ -148,7 +154,9 @@
 				48B672082C6FACD3003A7980 /* MainMenuView.swift in Sources */,
 				48B672062C6FACD3003A7980 /* ClassicGamesApp.swift in Sources */,
 				48B672152C6FAFDD003A7980 /* SnakeGameView.swift in Sources */,
+				48B672192C700798003A7980 /* SnakeGameModel.swift in Sources */,
 				48B672172C6FFA75003A7980 /* SnakeStruct.swift in Sources */,
+				48B6721D2C70B6DB003A7980 /* GameBoardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

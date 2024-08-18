@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct SnakeGameView: View {
-    @State private var highestScore = 0
-    @State private var currentScore = 0
+    
+    @StateObject private var gameModel = SnakeGameModel()
+    var highestScore: Int { gameModel.highScore }
+    var currentScore: Int { gameModel.score }
     
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             
             VStack {
-                
                 HStack {
+                    Spacer()
                     // High Score Window
-                    Spacer(minLength: 20)
                     VStack {
-                        Text("Highest Score")
+                        Text("High Score")
                             .font(.caption)
                             .foregroundColor(.white)
-                        Text("\(highestScore)")
+                        Text("\(gameModel.highScore)")
                             .font(.title2)
                             .foregroundColor(.yellow)
                     }
@@ -32,42 +33,69 @@ struct SnakeGameView: View {
                     .background(Color.gray.opacity(0.3))
                     .cornerRadius(10)
                     
-                    Spacer(minLength: 20)
+                    Spacer()
                     
+                    // Game Title
                     Text("Snake Game")
                         .font(.largeTitle)
                         .foregroundColor(.white)
-                        .padding()
-                    Button(action: {
-                        // Start game action here
-                    }) {
-                        Image(systemName: "play.fill")
-                            .foregroundColor(.white)
-                            .frame(width: 30, height: 30)
-                            .background(Color.green)
-                            .clipShape(Circle())
-                    }
-                    Spacer(minLength: 20)
                     
+                    Spacer()
+                    
+                    // Start Button and Current Score
+                    HStack(spacing: 10) {
+                        Button(action: {
+                            gameModel.startGame()
+                        }) {
+                            Image(systemName: "play.fill")
+                                .foregroundColor(.black)
+                                .frame(width: 30, height: 30)
+                                .background(Color.green)
+                                .clipShape(Circle())
+                        }
+                    }
                     VStack {
                         Text("Score")
                             .font(.caption)
                             .foregroundColor(.white)
-                        Text("\(currentScore)")
+                        Text("\(gameModel.score)")
                             .font(.title2)
                             .foregroundColor(.green)
                     }
                     .frame(width: 80, height: 50)
                     .background(Color.gray.opacity(0.3))
                     .cornerRadius(10)
-                    Spacer()
-                    // Placeholder for game area
                     
+                    Spacer()
                 }
-                Rectangle()
-                    .fill(Color.gray.opacity(0.7))
+                .padding()
+                
+                // Game Board
+                GameBoardView(gameModel: gameModel)
                     .frame(width: 500, height: 300)
-                Spacer(minLength: 20)
+                
+                // Game Controls
+                HStack {
+                    ForEach(["←", "↑", "↓", "→"], id: \.self) { direction in
+                        Button(action: {
+                            switch direction {
+                            case "←": gameModel.changeDirection(.left)
+                            case "↑": gameModel.changeDirection(.up)
+                            case "↓": gameModel.changeDirection(.down)
+                            case "→": gameModel.changeDirection(.right)
+                            default: break
+                            }
+                        }) {
+                            Text(direction)
+                                .font(.title)
+                                .frame(width: 50, height: 50)
+                                .background(Color.gray.opacity(0.3))
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
+                    }
+                }
+                .padding()
             }
         }
         .navigationTitle("Snake")
